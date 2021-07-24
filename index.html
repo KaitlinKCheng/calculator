@@ -14,29 +14,35 @@
         <h1 id="title">Calculator</h1>
         <div id="calc-container">
             <p id="display"></p>
-
-            <button id="one" class="number calc-btn">1</button>
-            <button id="two" class="number calc-btn">2</button>
-            <button id="three" class="number calc-btn">3</button>
-
-            <button id="four" class="number calc-btn">4</button>
-            <button id="five" class="number calc-btn">5</button>
-            <button id="six" class="number calc-btn">6</button>
-
-            <button id="seven" class="number calc-btn">7</button>
-            <button id="eight" class="number calc-btn">8</button>
-            <button id="nine" class="number calc-btn">9</button>
-
-            <button id="zero" class="number calc-btn">0</button>
-            <button id="equals" class="calc-btn">=</button>
-            <button id="clear" class="calc-btn">C</button>
-            <button id="decimal" class="calc-btn">.</button>
-            <button id="reverse-sign" class="calc-btn">+/-</button>
-
-            <button id="divide" class="operator calc-btn">/</button>
-            <button id="multiply" class="operator calc-btn">*</button>
-            <button id="subtract" class="operator calc-btn">-</button>
-            <button id="add" class="operator calc-btn">+</button>
+            <div class="row">
+                <button id="clear" class="calc-btn">C</button>
+                <button id="divide" class="operator calc-btn">/</button>
+            </div>
+            <div class="row">
+                <button id="seven" class="number calc-btn">7</button>
+                <button id="eight" class="number calc-btn">8</button>
+                <button id="nine" class="number calc-btn">9</button>
+                <button id="multiply" class="operator calc-btn">*</button>
+            </div>
+            <div class="row">
+                <button id="four" class="number calc-btn">4</button>
+                <button id="five" class="number calc-btn">5</button>
+                <button id="six" class="number calc-btn">6</button>
+                <button id="subtract" class="operator calc-btn">-</button>
+            </div>
+            <div class="row">
+                <button id="one" class="number calc-btn">1</button>
+                <button id="two" class="number calc-btn">2</button>
+                <button id="three" class="number calc-btn">3</button>
+                <button id="add" class="operator calc-btn">+</button>
+            </div>
+            <div class="row">
+                <button id="reverse-sign" class="calc-btn">+/-</button>
+                <button id="zero" class="number calc-btn">0</button>
+                <button id="decimal" class="calc-btn">.</button>
+                <button id="equals" class="calc-btn">=</button>
+            </div>
+            <p id="created-by">Created by KC</p>
         </div>
     </main>
     <script src="./scripts/script.js"></script>
