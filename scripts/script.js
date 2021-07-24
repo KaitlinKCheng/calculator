@@ -29,7 +29,7 @@ function setup() {
         btn.addEventListener('click', evaluateBtnPress);
     });
 
-    calcDisplay.textContent = displayVal;
+    updateDisplay();
 }
 
 /**
@@ -62,7 +62,7 @@ function pressNumber(e) {
         displayVal += e.target.textContent;
     }
 
-    calcDisplay.textContent = displayVal;
+    updateDisplay();
 }
 
 /**
@@ -73,7 +73,7 @@ function pressNumber(e) {
  * @param {Event} e - The event that occurred.
  */
 function pressOperator(e) {
-    calcDisplay.textContent = displayVal;
+    updateDisplay();
 
     if (!isNaN(displayVal)) {
         if (input[0] === undefined || input[2] === EQUALS) {
@@ -109,7 +109,7 @@ function pressOther(e) {
             break;
         case 'clear':
             displayVal = 0;
-            calcDisplay.textContent = displayVal;
+            updateDisplay();
             input = [];
             break;
     }
@@ -148,7 +148,7 @@ function calculate() {
         displayVal = input[0];
     }
 
-    calcDisplay.textContent = displayVal;
+    updateDisplay();
 }
 
 /**
@@ -213,4 +213,15 @@ function multiply(n1, n2) {
  */
 function divide(n1, n2) {
     return n1 / n2;
+}
+
+/**
+ * Updates the calculator's display with the current stored display value.
+ */
+function updateDisplay() {
+    if (displayVal.toString().length >= 10 && !isNaN(displayVal)) {
+        calcDisplay.textContent = parseFloat(displayVal).toExponential();
+    } else {
+        calcDisplay.textContent = displayVal;
+    }
 }
