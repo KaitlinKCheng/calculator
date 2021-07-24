@@ -11,7 +11,9 @@ const SUBTRACT = '-';
 const MULTIPLY = '*';
 const DIVIDE = '/';
 
-let displayVal = '';
+const EQUALS = '=';
+
+let displayVal = 0;
 let input = []; // [num1, num2, operator]
 
 /* SETUP */
@@ -26,6 +28,8 @@ function setup() {
     calcBtns.forEach((btn) => {
         btn.addEventListener('click', evaluateBtnPress);
     });
+
+    calcDisplay.textContent = displayVal;
 }
 
 /**
@@ -52,7 +56,12 @@ function evaluateBtnPress(e) {
  * @param {Event} e - The event that occurred.
  */
 function pressNumber(e) {
-    displayVal += e.target.textContent;
+    if (!+displayVal || input[2] === EQUALS) {
+        displayVal = e.target.textContent;
+    } else {
+        displayVal += e.target.textContent;
+    }
+
     calcDisplay.textContent = displayVal;
 }
 
@@ -64,19 +73,23 @@ function pressNumber(e) {
  * @param {Event} e - The event that occurred.
  */
 function pressOperator(e) {
-    if (input[0] === undefined) { // No stored numbers
-        input[0] = +displayVal;
-    } else { // At least 1 stored number
-        input[1] = +displayVal;
+    calcDisplay.textContent = displayVal;
 
-        // Operator must exist before calculation
-        if (input[2] !== undefined) {
-            calculate();
+    if (!isNaN(displayVal)) {
+        if (input[0] === undefined || input[2] === EQUALS) {
+            input[0] = +displayVal;
+        } else {
+            input[1] = +displayVal;
+
+            // Operator must exist before calculation
+            if (input[2] !== undefined && input[2] !== EQUALS) {
+                calculate();
+            }
         }
-    }
 
-    input[2] = convertOperator(e.target.id);
-    displayVal = ''; // Refresh the display
+        input[2] = convertOperator(e.target.id);
+        displayVal = 0; // Refresh display
+    }
 }
 
 /**
@@ -91,11 +104,11 @@ function pressOther(e) {
                 input[1] = +displayVal;
                 calculate();
                 input[1] = undefined;
-                input[2] = undefined;
+                input[2] = EQUALS;
             }
             break;
         case 'clear':
-            displayVal = '';
+            displayVal = 0;
             calcDisplay.textContent = displayVal;
             input = [];
             break;
