@@ -113,7 +113,8 @@ function pressOther(e) {
             input = [];
             break;
         case 'decimal':
-            if (displayVal.toString().indexOf('.') === -1) {
+            if (displayVal.toString().indexOf('.') === -1
+                    && !isNaN(displayVal)) {
                 displayVal += '.';
                 updateDisplay();
             }
