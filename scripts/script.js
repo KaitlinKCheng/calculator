@@ -112,6 +112,12 @@ function pressOther(e) {
             updateDisplay();
             input = [];
             break;
+        case 'decimal':
+            if (displayVal.toString().indexOf('.') === -1) {
+                displayVal += '.';
+                updateDisplay();
+            }
+            break;
     }
 }
 
