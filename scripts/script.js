@@ -100,7 +100,7 @@ function pressOperator(e) {
 function pressOther(e) {
     switch(e.target.id) {
         case 'equals':
-            if (input[2] !== undefined) {
+            if (input[2] !== undefined && input[2] !== EQUALS) {
                 input[1] = +displayVal;
                 calculate();
                 input[1] = undefined;
