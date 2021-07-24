@@ -119,6 +119,12 @@ function pressOther(e) {
                 updateDisplay();
             }
             break;
+        case 'reverse-sign':
+            if (!isNaN(displayVal)) {
+                displayVal = +displayVal * -1;
+                updateDisplay();
+            }
+            break;
     }
 }
 
