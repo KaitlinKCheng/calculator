@@ -1,0 +1,146 @@
+:root {
+    /* Colors */
+    --calc-color: #e1e7f5;
+    --num-color: #c0eef4;
+    --other-color: #f4c0e7;
+    --equals-color: #cbc0f4;
+    --border-color: #48465f;
+
+    /* Fonts */
+    --calc-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    /* Sizes */
+    --btn-width: 75px;
+    --dbl-btn-width: 150px;
+    --display-width: 300px;
+}
+
+body {
+    font-size: 1.2rem;
+    font-family: var(--calc-font);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+#calc-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    margin: 40px auto 20px auto;
+    padding: 40px;
+    background-color: var(--calc-color);
+    outline: 4px solid var(--border-color);
+    border-radius: 5px;
+}
+
+#display {
+    width: var(--display-width);
+    padding: 20px 10px;
+    font-size: 3rem;
+    text-align: right;
+    background-color: #fff;
+    outline: 3px solid var(--border-color);
+    border-radius: 3px;
+}
+
+.calc-btn {
+    width: var(--btn-width);
+    height: var(--btn-width);
+    font-size: 2rem;
+    font-weight: bold;
+    outline: 3px solid var(--border-color);
+    border-radius: 3px;
+}
+
+.operator,
+#clear,
+#reverse-sign,
+#decimal {
+    background-color: var(--other-color);
+}
+
+#equals {
+    background-color: var(--equals-color);
+}
+
+.number {
+    background-color: var(--num-color);
+}
+
+#clear,
+#equals {
+    width: var(--dbl-btn-width);
+}
+
+#created-by {
+    margin-top: 20px;
+    font-style: italic;
+    color: black;
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 1rem;
+    }
+
+    #calc-container {
+        width: 275px;
+        padding: 30px;
+    }
+
+    #display {
+        width: 200px;
+        font-size: 2rem;
+    }
+
+    .calc-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    #clear,
+    #equals {
+        width: 100px;
+    }
+
+    #created-by {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 300px) {
+    body {
+        font-size: 0.8rem;
+    }
+
+    #calc-container {
+        width: 150px;
+        padding: 20px;
+    }
+
+    #display {
+        width: 120px;
+        font-size: 1rem;
+    }
+
+    .calc-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+        font-weight: normal;
+    }
+
+    #clear,
+    #equals {
+        width: 60px;
+    }
+
+    #created-by {
+        margin-top: 10px;
+    }
+}
