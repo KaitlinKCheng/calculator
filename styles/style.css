@@ -71,6 +71,14 @@ body {
     background-color: var(--num-color);
 }
 
+.calc-btn:hover,
+#clear:hover,
+#reverse-sign:hover,
+#decimal:hover,
+#equals:hover {
+    background-color: #fff;
+}
+
 #clear,
 #equals {
     width: var(--dbl-btn-width);
