@@ -233,7 +233,7 @@ function divide(n1, n2) {
  */
 function updateDisplay() {
     if (displayVal.toString().length >= 10 && !isNaN(displayVal)) {
-        calcDisplay.textContent = parseFloat(displayVal).toExponential();
+        calcDisplay.textContent = parseFloat(displayVal).toExponential(6);
     } else {
         calcDisplay.textContent = displayVal;
     }
